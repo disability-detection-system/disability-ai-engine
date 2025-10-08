@@ -50,6 +50,8 @@ class HandwritingAnalyzer:
     
     def detect_contours(self, binary_image: np.ndarray) -> List[np.ndarray]:
         """Detect and filter contours representing letters/characters"""
+        assert isinstance(binary_image, np.ndarray) and binary_image.ndim == 2 and binary_image.dtype == np.uint8, \
+            "detect_contours expects a 2D uint8 binary image"
         contours, _ = cv2.findContours(
             binary_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
         )
