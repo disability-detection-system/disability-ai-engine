@@ -73,17 +73,14 @@ def convert_webm_to_wav(webm_path: str, wav_path: str) -> bool:
         ]
         
         print(f"Converting WebM to WAV: {webm_path} -> {wav_path}")
-        result = subprocess.run(cmd, 
-                              stdout=subprocess.PIPE, 
-                              stderr=subprocess.PIPE, 
-                              check=True)
+        subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE, check=True)
         
         # Check if output file was created
         if os.path.exists(wav_path) and os.path.getsize(wav_path) > 0:
-            print(f"Successfully converted WebM to WAV")
+            print("Successfully converted WebM to WAV")
             return True
         else:
-            print(f"Conversion failed - output file not created or empty")
+            print("Conversion failed - output file not created or empty")
             return False
         
     except subprocess.CalledProcessError as e:
@@ -113,10 +110,10 @@ def convert_webm_to_wav_pydub(webm_path: str, wav_path: str) -> bool:
         
         # Check if output file was created
         if os.path.exists(wav_path) and os.path.getsize(wav_path) > 0:
-            print(f"Successfully converted WebM to WAV using pydub")
+            print("Successfully converted WebM to WAV using pydub")
             return True
         else:
-            print(f"Pydub conversion failed - output file not created or empty")
+            print("Pydub conversion failed - output file not created or empty")
             return False
             
     except Exception as e:
@@ -140,7 +137,7 @@ def analyze_speech():
         file_ext = filename.rsplit('.', 1)[1].lower() if '.' in filename else 'webm'
         
         if file_ext not in ALLOWED_EXTENSIONS:
-            return jsonify({'error': f'Unsupported file format. Use WAV, MP3, OGG, M4A, or WebM'}), 400
+            return jsonify({'error': 'Unsupported file format. Use WAV, MP3, OGG, M4A, or WebM'}), 400
         
         # Get optional reference text
         reference_text = request.form.get('reference_text', '')
@@ -181,7 +178,7 @@ def analyze_speech():
             # Analyze speech
             print(f"Starting speech analysis for: {analysis_path}")
             features = analyzer.analyze_speech_file(analysis_path, reference_text)
-            print(f"Speech analysis completed successfully")
+            print("Speech analysis completed successfully")
             
             # Convert to dictionary for JSON response
             result = {

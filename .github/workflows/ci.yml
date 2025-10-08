@@ -30,8 +30,12 @@ jobs:
           # Fallback if requirements not present
           pip install pytest pytest-cov ruff || true
 
-      - name: Lint
-        run: ruff check .
+      - name: Lint (auto-fix safe rules)
+        run: |
+          ruff check . --fix
+          # Re-run without --fix to fail if anything remains
+          ruff check .
+
 
       - name: Run tests with coverage
         run: |

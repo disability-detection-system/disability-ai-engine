@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Dict, List, Tuple, Optional
+from typing import List, Tuple
 import os
 from dataclasses import dataclass
-import math
+
 
 @dataclass
 class HandwritingFeatures:
@@ -433,7 +433,7 @@ class HandwritingAnalyzer:
                     angle -= 90
                     
                 angles.append(angle)
-            except:
+            except Exception:
                 # If minAreaRect fails, skip this contour
                 continue
         

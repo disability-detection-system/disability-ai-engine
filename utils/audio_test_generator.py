@@ -1,8 +1,6 @@
 import numpy as np
-import librosa
 import soundfile as sf
 import os
-from scipy.io import wavfile
 import random
 
 def create_sample_audio_files():

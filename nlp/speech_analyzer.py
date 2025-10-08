@@ -2,16 +2,9 @@ import speech_recognition as sr
 import numpy as np
 import librosa
 import matplotlib.pyplot as plt
-from typing import Dict, List, Tuple, Optional
+from typing import Dict
 from dataclasses import dataclass
-import tempfile
 import os
-import wave
-import webrtcvad
-import collections
-import contextlib
-import sys
-import time
 from datetime import datetime
 
 @dataclass
