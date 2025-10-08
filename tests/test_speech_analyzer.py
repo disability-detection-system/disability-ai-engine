@@ -1,6 +1,8 @@
 import unittest
 import sys
 import os
+from unittest.mock import patch
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from nlp.speech_analyzer import SpeechAnalyzer, SpeechFeatures
@@ -13,7 +15,8 @@ class TestSpeechAnalyzer(unittest.TestCase):
         self.analyzer = SpeechAnalyzer()
         create_sample_audio_files()
     
-    def test_speech_analysis(self):
+    @patch("nlp.speech_analyzer.sr.Recognizer.recognize_google", return_value="mock transcript")
+    def test_speech_analysis(self, _mock_recognize):
         """Test complete speech analysis"""
         sample_path = 'samples/speech/sample_good.wav'
         if os.path.exists(sample_path):
