@@ -17,9 +17,10 @@ class TestHandwritingAnalyzer(unittest.TestCase):
         """Test image preprocessing"""
         sample_path = 'samples/handwriting/sample_good.png'
         if os.path.exists(sample_path):
-            processed = self.analyzer.preprocess_image(sample_path)
-            self.assertIsNotNone(processed)
-            self.assertEqual(len(processed.shape), 2)  # Should be grayscale
+            binary, gray = self.analyzer.preprocess_image(sample_path)
+            self.assertIsNotNone(gray)
+            self.assertEqual(len(gray.shape), 2)
+            self.assertIn(binary.dtype.kind, ('b','u','i'))  # Should be grayscale
     
     def test_contour_detection(self):
         """Test contour detection"""
