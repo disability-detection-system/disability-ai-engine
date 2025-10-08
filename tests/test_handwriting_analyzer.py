@@ -26,6 +26,7 @@ class TestHandwritingAnalyzer(unittest.TestCase):
         sample_path = 'samples/handwriting/sample_good.png'
         if os.path.exists(sample_path):
             binary, gray = self.analyzer.preprocess_image(sample_path)
+            assert len(gray.shape) == 2 
             contours = self.analyzer.detect_contours(binary)
             self.assertIsInstance(contours, list)
             self.assertGreaterEqual(len(contours), 0)
