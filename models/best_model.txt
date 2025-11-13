@@ -1,0 +1,4 @@
+Best Model: svm
+Model Path: c:\Users\SIDDHESH\OneDrive\Desktop\Major\disability_ai_engine\models\svm_20251106_004527.pkl
+Accuracy: 0.9983
+F1-Score: 0.9983

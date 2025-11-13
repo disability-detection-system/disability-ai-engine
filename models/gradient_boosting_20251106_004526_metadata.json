@@ -1,0 +1,12 @@
+{
+    "model_type": "gradient_boosting",
+    "model_name": "gradient_boosting_20251106_004526",
+    "training_history": {
+        "train_accuracy": 1.0,
+        "train_samples": 1920,
+        "val_accuracy": 0.9895833333333334,
+        "val_samples": 480
+    },
+    "is_trained": true,
+    "save_date": "2025-11-06 00:45:26"
+}

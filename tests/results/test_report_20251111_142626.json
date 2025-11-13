@@ -1,0 +1,143 @@
+{
+  "accuracy_test": {
+    "overall_accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "per_class_metrics": {
+      "dysgraphia": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 500.0
+      },
+      "dyslexia": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 500.0
+      },
+      "normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 500.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1500.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1500.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        500,
+        0,
+        0
+      ],
+      [
+        0,
+        500,
+        0
+      ],
+      [
+        0,
+        0,
+        500
+      ]
+    ],
+    "test_samples": 1500
+  },
+  "edge_cases": {
+    "extreme_dyslexia": {
+      "prediction": "dyslexia",
+      "confidence": 0.9816854329697607,
+      "probabilities": {
+        "dysgraphia": 0.0080164523735128,
+        "dyslexia": 0.9816854329697607,
+        "normal": 0.010298114656726452
+      }
+    },
+    "extreme_dysgraphia": {
+      "prediction": "dysgraphia",
+      "confidence": 0.999782497525159,
+      "probabilities": {
+        "dysgraphia": 0.999782497525159,
+        "dyslexia": 0.00011121542019377391,
+        "normal": 0.0001062870546470344
+      }
+    },
+    "borderline_normal": {
+      "prediction": "normal",
+      "confidence": 0.6668920437843372,
+      "probabilities": {
+        "dysgraphia": 0.2854063496212261,
+        "dyslexia": 0.04770160659443661,
+        "normal": 0.6668920437843372
+      }
+    }
+  },
+  "age_sensitivity": [
+    {
+      "age": 6,
+      "prediction": "dyslexia",
+      "confidence": 0.9999563575440861
+    },
+    {
+      "age": 7,
+      "prediction": "dyslexia",
+      "confidence": 0.9999577566720309
+    },
+    {
+      "age": 8,
+      "prediction": "dyslexia",
+      "confidence": 0.9999583140397221
+    },
+    {
+      "age": 9,
+      "prediction": "dyslexia",
+      "confidence": 0.9999583354522602
+    },
+    {
+      "age": 10,
+      "prediction": "dyslexia",
+      "confidence": 0.9999580036280029
+    },
+    {
+      "age": 11,
+      "prediction": "dyslexia",
+      "confidence": 0.9999574337048728
+    },
+    {
+      "age": 12,
+      "prediction": "dyslexia",
+      "confidence": 0.9999567013877102
+    }
+  ],
+  "performance": {
+    "total_samples": 999,
+    "total_time_seconds": 0.007611274719238281,
+    "avg_time_per_sample_ms": 0.0076188936128511325,
+    "throughput_samples_per_second": 131252.6530509961
+  },
+  "recommendation_engine": [
+    {
+      "case": "Mild Dyslexia",
+      "severity": "mild",
+      "num_interventions": 3
+    },
+    {
+      "case": "Severe Dysgraphia",
+      "severity": "severe",
+      "num_interventions": 4
+    }
+  ]
+}

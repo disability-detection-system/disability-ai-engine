@@ -1,0 +1,12 @@
+{
+    "model_type": "svm",
+    "model_name": "svm_20251106_004154",
+    "training_history": {
+        "train_accuracy": 1.0,
+        "train_samples": 1920,
+        "val_accuracy": 1.0,
+        "val_samples": 480
+    },
+    "is_trained": true,
+    "save_date": "2025-11-06 00:41:54"
+}

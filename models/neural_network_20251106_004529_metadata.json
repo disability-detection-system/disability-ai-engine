@@ -1,0 +1,12 @@
+{
+    "model_type": "neural_network",
+    "model_name": "neural_network_20251106_004529",
+    "training_history": {
+        "train_accuracy": 1.0,
+        "train_samples": 1920,
+        "val_accuracy": 1.0,
+        "val_samples": 480
+    },
+    "is_trained": true,
+    "save_date": "2025-11-06 00:45:29"
+}
